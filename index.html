@@ -23,16 +23,14 @@
    <section>
     <div class = "windowStyle" id = "window1">
         <h1>Coding Quiz Challenge</h1>
-        <p>Please answer all of the following questions, there will be 120 seconds for 6 questions, for every wrong question 10 seconds will be deducted. Quiz will stop at 120 seconds, so please try to finish before that time</p>
+        <p>Please answer all of the following questions, there will be 120 seconds for 6 questions, for every wrong question 10 seconds will be deducted. If you press 'Final Submission' button you will exit the quiz</p>
+        <br>
         <button id = "generateQuiz">Start Quiz</button>
     </div>
 
     <div class = "windowStyle" id = "window2">
-    <h1 id = "runningQuestion">Question</h1>
-    <p>This is my question</p>
+    <h1 id = "runningQuestion">QUIZ</h1>
     <div>
-        <br>
-        <br>
         <br>
 <button id = "runningChoice1">option1</button>
 <br>
@@ -44,10 +42,15 @@
 <br>
 <br>
 <button id = "runningChoice4">option4</button>
+<br>
+<br>
+<br>
+<button id = "finalSubmission">Final Submission</button>
 </div>
 
 </div>
-<div class = "windowStyle" id = "finalPage"> 
+<div class = "windowStyle" id = "finalPage">
+    <div id = "printGrades"></div> 
 <form>
 <h3>Please enter your Initials</h3>
     <input type= "text"> </input>

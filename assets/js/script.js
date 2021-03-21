@@ -4,7 +4,9 @@ let scoreArray = [];
 
 var startQuizBtn = document.querySelector("#generateQuiz");
 startQuizBtn.addEventListener("click", displayQuestion);
-//this method was told to me by JAmes from ASk bootcamp, this needs to be incorporated
+
+var finalSubmitBtn = document.querySelector("#finalSubmission");
+finalSubmitBtn.addEventListener("click", finalSubmit);
 
 document.getElementById("window2").style.display="none"; 
 
@@ -14,23 +16,25 @@ var quizChoice2 = document.getElementById("runningChoice2");
 var quizChoice3 = document.getElementById("runningChoice3");
 var quizChoice4 = document.getElementById("runningChoice4");
 
+var finalGrade = document.getElementById("printGrades");
+
 var questions = [
-{question: "this is my first question",
+{question: "First Question",
 choices: ["a","b","c","d"], 
 answer: "c"},
-{question: "this is my second question",
+{question: "Second Question",
 choices: ["e","f","g","h"], 
 answer: "g"},
-{question: "this is my second question",
+{question: "Third Question",
 choices: ["i","j","k","l"], 
 answer: "k"},
-{question: "this is my second question",
+{question: "Fourth Question",
 choices: ["m","n","o","p"], 
 answer: "o"},
-{question: "this is my second question",
+{question: "Fifth Question",
 choices: ["q","r","s","t"], 
 answer: "s"},
-{question: "this is my second question",
+{question: "Sixth Question",
 choices: ["u","v","w","x"], 
 answer: "w"},
 ]
@@ -56,16 +60,15 @@ questionNumber++
 console.log(questionNumber)
 if (questionNumber >= 6)
 {
-    alert("Quiz Over, Your final scores are" + "   " + quizScores + "   " + "Thank you ! for participating, GoodBye!");
-    //This should be back in the div, ask user to enter initials and save everything
-
-    
+    finalSubmit();
 } 
 else
 {
 displayQuestion();
 }
 }
+
+// function finalPage () {document.getElementById("finalPage").style.display="none";}
 
 function displayQuestion ()
 
@@ -80,7 +83,18 @@ document.getElementById("window2").style.display="block";
     quizChoice4.innerText = questions[questionNumber].choices[3];
 }
 
+function finalSubmit ()
+{
+document.getElementById("window1").style.display="none"; 
+document.getElementById("window2").style.display="none";
+document.getElementById("finalPage").style.display="block";
+finalGrade.innerText = "Quiz Over, Your final scores are" + "   " + quizScores + "   " + "Please enter your initials and save your scores. Thank you ! for participating, GoodBye!";
+//you need to save the scores using JSON string
+}
+
+
 quizChoice1.addEventListener("click", evaluation);
 quizChoice2.addEventListener("click", evaluation); 
 quizChoice3.addEventListener("click", evaluation);
 quizChoice4.addEventListener("click", evaluation);
+
