@@ -73,6 +73,7 @@ displayQuestion();
 function displayQuestion ()
 
 {
+   // setTimeout()
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
 document.getElementById("window2").style.display="block"; 
@@ -83,12 +84,22 @@ document.getElementById("window2").style.display="block";
     quizChoice4.innerText = questions[questionNumber].choices[3];
 }
 
+var saveInfo =function(event){
+    //setStorage
+    alert("saved");
+localStorage.setItem(initials)
+}
+
 function finalSubmit ()
 {
 document.getElementById("window1").style.display="none"; 
 document.getElementById("window2").style.display="none";
 document.getElementById("finalPage").style.display="block";
 finalGrade.innerText = "Quiz Over, Your final scores are" + "   " + quizScores + "   " + "Please enter your initials and save your scores. Thank you ! for participating, GoodBye!";
+var initials = document.getElementById ("formInitials");
+console.log(intials);
+initials.addEventListener('submit',saveInfo)
+console.log(initials);
 //you need to save the scores using JSON string
 }
 
