@@ -1,5 +1,5 @@
 var count = 120;
-var highScores = 0; 
+var quizScores = 0; 
 let scoreArray = [];
 
 var startQuizBtn = document.querySelector("#generateQuiz");
@@ -47,13 +47,24 @@ console.log(clickedText);
 if (clickedText === questions[questionNumber].answer)
 {
     alert("correct");
+    quizScores = quizScores + 20;
 }
 else {
     alert("incorrect");
 };
 questionNumber++
 console.log(questionNumber)
+if (questionNumber >= 6)
+{
+    alert("Quiz Over, Your final scores are" + "   " + quizScores + "   " + "Thank you ! for participating, GoodBye!");
+    //This should be back in the div, ask user to enter initials and save everything
+
+    
+} 
+else
+{
 displayQuestion();
+}
 }
 
 function displayQuestion ()
