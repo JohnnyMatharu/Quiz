@@ -4,7 +4,7 @@ flex-direction: row;
 justify-content: space-between;
 /* add the flexbox descriptions here */
 }
-#window {
+.windowStyle {
 padding-left: 600px;
 padding-top: 150px;
 padding-right: 600px;
@@ -12,3 +12,5 @@ padding-bottom: 600px;
 text-align: center;
 color: blue;
 }
+
+
