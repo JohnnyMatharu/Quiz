@@ -19,24 +19,24 @@ var quizChoice4 = document.getElementById("runningChoice4");
 var finalGrade = document.getElementById("printGrades");
 //var highScoresul=document.getElementById("highScores")
 var questions = [
-{question: "First Question",
-choices: ["a","b","c","d"], 
-answer: "c"},
-{question: "Second Question",
-choices: ["e","f","g","h"], 
-answer: "g"},
-{question: "Third Question",
-choices: ["i","j","k","l"], 
-answer: "k"},
-{question: "Fourth Question",
-choices: ["m","n","o","p"], 
-answer: "o"},
-{question: "Fifth Question",
-choices: ["q","r","s","t"], 
-answer: "s"},
-{question: "Sixth Question",
-choices: ["u","v","w","x"], 
-answer: "w"},
+{question: "What is library of Javascript?",
+choices: ["HTML","Mongo","Mern","JQuery"], 
+answer: "JQuery"},
+{question: "Bootstrap is an addition to which code?",
+choices: ["Html","Python","CSS","Javascript"], 
+answer: "CSS"},
+{question: "GetElementbyId is similar to a",
+choices: ["function","Query Selector","array","boolean"], 
+answer: "Query Selector"},
+{question: "Example of server side javascript",
+choices: ["Express","Node.js","Vanilla Javascript","React"], 
+answer: "Node.js"},
+{question: "What is full form of HTML",
+choices: ["High Markup Language","Higher Markdown Language","Hypertext Markup Language","High Marked Library"], 
+answer: "Hypertext Markup Language"},
+{question: "What is full stack web development",
+choices: ["its not real","it is connected to web domains","it means stacking of codes in que by server","It means combinations of front end and back end"], 
+answer: "It means combinations of front end and back end"},
 ]
 ;
 
@@ -55,6 +55,7 @@ if (clickedText === questions[questionNumber].answer)
 }
 else {
     alert("incorrect");
+    count=count-10;
 };
 questionNumber++
 console.log(questionNumber)
@@ -73,7 +74,17 @@ displayQuestion();
 function displayQuestion ()
 
 {
- setTimeout(finalSubmit, 120000);
+setTimeout(finalSubmit, 120000);
+setInterval(timeText, 2000);
+ function timeText ()
+ {
+    count--;
+    console.log(count);
+document.getElementById("timer").style.display = count.value
+
+}
+
+
 
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
