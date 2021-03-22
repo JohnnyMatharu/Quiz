@@ -73,7 +73,7 @@ displayQuestion();
 function displayQuestion ()
 
 {
- //setTimeout(finalSubmit, 3000);
+ setTimeout(finalSubmit, 3000);
 
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
@@ -106,7 +106,7 @@ var scores = JSON.parse(localStorage.getItem("highScores")) || [];
 scores.push(entry);
 localStorage.setItem("highScores",JSON.stringify(scores));
 });
-console.log(scores.max());
+
 //you need to save the scores using JSON string
 }
 
