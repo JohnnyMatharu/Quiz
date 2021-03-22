@@ -15,7 +15,7 @@ var quizChoice1 = document.getElementById("runningChoice1");
 var quizChoice2 = document.getElementById("runningChoice2");
 var quizChoice3 = document.getElementById("runningChoice3");
 var quizChoice4 = document.getElementById("runningChoice4");
-localStorage.setItem("highscores",[{initials:"hh",scores:}]);
+//localStorage.setItem("highscores",[initials:"hh",scores:]);
 var finalGrade = document.getElementById("printGrades");
 
 var questions = [
@@ -73,7 +73,7 @@ displayQuestion();
 function displayQuestion ()
 
 {
- setTimeout(finalSubmit(), 3000);
+ //setTimeout(finalSubmit, 3000);
 
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
@@ -102,11 +102,11 @@ event.preventDefault();
 var entry = {
     initials:document.querySelector("#inputInitial").value, score:quizScores
 };
-var scores = JSON.parse(localStorage.getItem("highScores"));
+var scores = JSON.parse(localStorage.getItem("highScores")) || [];
 scores.push(entry);
-localStorage.setItem("highScores",scores);
+localStorage.setItem("highScores",JSON.stringify(scores));
 });
-console.log(initials);
+console.log(scores.max());
 //you need to save the scores using JSON string
 }
 
