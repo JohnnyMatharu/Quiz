@@ -15,7 +15,7 @@ var quizChoice1 = document.getElementById("runningChoice1");
 var quizChoice2 = document.getElementById("runningChoice2");
 var quizChoice3 = document.getElementById("runningChoice3");
 var quizChoice4 = document.getElementById("runningChoice4");
-
+localStorage.setItem("highscores",[{initials:"hh",scores:}]);
 var finalGrade = document.getElementById("printGrades");
 
 var questions = [
@@ -73,7 +73,8 @@ displayQuestion();
 function displayQuestion ()
 
 {
-   // setTimeout()
+ setTimeout(finalSubmit(), 3000);
+
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
 document.getElementById("window2").style.display="block"; 
@@ -94,7 +95,16 @@ finalGrade.innerText = "Quiz Over, Your final scores are" + "   " + quizScores +
 var initials = document.getElementById ("formInitials");
 initials.addEventListener('submit',function(event) {
 event.preventDefault();
-localStorage.setItem("initials", document.querySelector("#inputInitial").value);
+
+//set an object with the score and initials as keys
+// get the array of scores saved on local storage
+// push the object to the array then store the array.
+var entry = {
+    initials:document.querySelector("#inputInitial").value, score:quizScores
+};
+var scores = JSON.parse(localStorage.getItem("highScores"));
+scores.push(entry);
+localStorage.setItem("highScores",scores);
 });
 console.log(initials);
 //you need to save the scores using JSON string
