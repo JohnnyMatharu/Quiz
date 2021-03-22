@@ -17,7 +17,7 @@ var quizChoice3 = document.getElementById("runningChoice3");
 var quizChoice4 = document.getElementById("runningChoice4");
 //localStorage.setItem("highscores",[initials:"hh",scores:]);
 var finalGrade = document.getElementById("printGrades");
-
+//var highScoresul=document.getElementById("highScores")
 var questions = [
 {question: "First Question",
 choices: ["a","b","c","d"], 
@@ -73,7 +73,7 @@ displayQuestion();
 function displayQuestion ()
 
 {
- setTimeout(finalSubmit, 3000);
+ setTimeout(finalSubmit, 120000);
 
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
