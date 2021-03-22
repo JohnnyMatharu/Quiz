@@ -80,7 +80,7 @@ setInterval(timeText, 2000);
  {
     count--;
     console.log(count);
-document.getElementById("timer").innerHTML = "timer is running"
+document.getElementById("timer").innerHTML = count;
 
 }
 
