@@ -4,6 +4,7 @@ let scoreArray = [];
 
 var startQuizBtn = document.querySelector("#generateQuiz");
 startQuizBtn.addEventListener("click", displayQuestion);
+startQuizBtn.addEventListener("click", startGame);
 
 var finalSubmitBtn = document.querySelector("#finalSubmission");
 finalSubmitBtn.addEventListener("click", finalSubmit);
@@ -42,6 +43,43 @@ answer: "It means combinations of front end and back end"},
 
 var questionNumber = 0;
 
+function startGame() {
+setInterval (timeText,1000)
+    displayQuestion();
+}
+
+function timeText ()
+ {
+if (count>0)
+{
+    count =count-1;
+    console.log(count);
+document.getElementById("timer").innerHTML = count;
+}
+else
+{finalSubmit();}
+};
+
+
+
+function displayQuestion ()
+
+{
+
+    
+
+console.log("hey")
+document.getElementById("window1").style.display="none"; 
+document.getElementById("window2").style.display="block"; 
+    quizQuestion.innerText = questions[questionNumber].question;
+    quizChoice1.innerText = questions[questionNumber].choices[0];
+    quizChoice2.innerText = questions[questionNumber].choices[1];
+    quizChoice3.innerText = questions[questionNumber].choices[2];
+    quizChoice4.innerText = questions[questionNumber].choices[3];
+}
+
+
+
 function evaluation(event) 
 {
 var clickedAnswer = event.target;
@@ -71,34 +109,6 @@ displayQuestion();
 
 // function finalPage () {document.getElementById("finalPage").style.display="none";}
 
-function displayQuestion ()
-
-{
-setTimeout(finalSubmit, 120000);
-setInterval(timeText, 2000);
-
-
-function timeText ()
- {
-if (count>0)
-{
-    count =count-1;
-    console.log(count);
-document.getElementById("timer").innerHTML = count;
-}
-else
-{finalSubmit();}
-};
-
-console.log("hey")
-document.getElementById("window1").style.display="none"; 
-document.getElementById("window2").style.display="block"; 
-    quizQuestion.innerText = questions[questionNumber].question;
-    quizChoice1.innerText = questions[questionNumber].choices[0];
-    quizChoice2.innerText = questions[questionNumber].choices[1];
-    quizChoice3.innerText = questions[questionNumber].choices[2];
-    quizChoice4.innerText = questions[questionNumber].choices[3];
-}
 
 function finalSubmit ()
 {
@@ -129,4 +139,3 @@ quizChoice1.addEventListener("click", evaluation);
 quizChoice2.addEventListener("click", evaluation); 
 quizChoice3.addEventListener("click", evaluation);
 quizChoice4.addEventListener("click", evaluation);
-
