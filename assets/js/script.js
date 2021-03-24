@@ -66,7 +66,7 @@ if (questionNumber >= 6)
 else
 {
 displayQuestion();
-}
+};
 }
 
 // function finalPage () {document.getElementById("finalPage").style.display="none";}
@@ -76,15 +76,19 @@ function displayQuestion ()
 {
 setTimeout(finalSubmit, 120000);
 setInterval(timeText, 2000);
- function timeText ()
+
+
+function timeText ()
  {
-    count--;
+if (count>0)
+{
+    count =count-1;
     console.log(count);
 document.getElementById("timer").innerHTML = count;
-
 }
-
-
+else
+{finalSubmit();}
+};
 
 console.log("hey")
 document.getElementById("window1").style.display="none"; 
@@ -95,7 +99,6 @@ document.getElementById("window2").style.display="block";
     quizChoice3.innerText = questions[questionNumber].choices[2];
     quizChoice4.innerText = questions[questionNumber].choices[3];
 }
-
 
 function finalSubmit ()
 {
