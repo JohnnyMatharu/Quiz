@@ -123,11 +123,24 @@ event.preventDefault();
 //set an object with the score and initials as keys
 // get the array of scores saved on local storage
 // push the object to the array then store the array.
+
+
+//taking intials and scores of user and saving as an entry variable
 var entry = {
-    initials:document.querySelector("#inputInitial").value, score:quizScores
+    initials: document.querySelector("#inputInitial").value,
+    score: quizScores,
+    
 };
+
+//checking to see if highscores key exists in local storage
+//if highscores exist, parse strigified array and set equal to scores
+//if highscores don't exist, set scores = empty array
+
+
 var scores = JSON.parse(localStorage.getItem("highScores")) || [];
+//push the entry to scores array that we just parsed
 scores.push(entry);
+//send scores the complete updated array back to highscores
 localStorage.setItem("highScores",JSON.stringify(scores));
 });
 
