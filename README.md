@@ -6,7 +6,7 @@ Many security driven organizations need questions to be answered by user, or eve
 
 It is a code for quiz with negative marking for timer. 120 seconds, 6 questions with 20 points for each question
 
-Tools used include HTML and Javascript
+Tools used include HTML, CSS and Javascript
 
 # Screenshots
 https://github.com/JohnnyMatharu/Quiz/blob/main/quiz.png?raw=true
